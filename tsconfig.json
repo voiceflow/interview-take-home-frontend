@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "declaration": false,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "isolatedModules": false,
+    "jsx": "react",
+    /* Strictness Checks */
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictPropertyInitialization": true,
+    /* Debugging Options */
+    "traceResolution": false,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "pretty": true,
+    "lib": [
+      "es2019",
+      "dom",
+      "es2020.string"
+    ],
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": []
+  },
+  "compileOnSave": false,
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "config/**/*",
+    "typings/**/*.d.ts",
+  ],
+  "exclude": [
+    "node_modules/**"
+  ]
+}
