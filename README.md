@@ -34,7 +34,7 @@ Go on http://localhost:3000, you should see a window like this:
 
 # Overview ℹ️
 
-Login/sign up for [Voiceflow Creator](https://creator.voiceflow.com), and build a simple **Custom Assistant** project. If you need inspiration you can check out the [Templates Workspace](https://creator.voiceflow.com/workspace/D8nag5Vko2). Test it out to make sure it's working!
+Login/sign up for [Voiceflow Creator](https://creator.voiceflow.com), and build a simple **Custom Assistant** project. If you need inspiration you can check out the [Templates](https://www.voiceflow.com/templates-draft). Test it out to make sure it's working!
 
 On the **"Launch"** tab of your Voiceflow project, you'll be able to get the API keys as well as the version. Under `src/Chat/utils.ts` you'll find a utility function that shows how the API can be called. [Click here](https://www.voiceflow.com/api/dialog-manager) for more documentation on the Voiceflow API.
 
@@ -57,12 +57,13 @@ Feel free to modify the code as much as you want, as the template is more of a s
 
 # Requirements
 
-- The chat should be scrollable and contain the entire history.
+- The chat should be scrollable and go as far back as the conversation start
+- Reset after a chat is finished
 - The chat should play the MP3 audio if included in the `Speak` trace in the response, audio should never overlap.
 - User's chat history and state should be stored even if the page refreshes
 - Start with 0 users, but should be able to create new ones, and delete old ones
 - Chat should always scroll to the most recent message when updated
-- Set up a build to turn the Typescript project into a browser compatiable JS static Single Page Application
+- Set up a build to turn the Typescript project into a browser compatible JS static Single Page Application
 
 # Tips 📝
 
@@ -70,7 +71,7 @@ Unless you get fancy and go off the rails (which isn't a bad thing 👍) this pr
 
 - use Typescript proficiently
 - use repeatable, scalable patterns
-- make modular, nicely separated comopnents
+- make modular, nicely separated components
 - account for edge cases
 - manage sensitive data securely
 - manage data passing properly
