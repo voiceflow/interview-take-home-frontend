@@ -12,15 +12,9 @@ const CHAT_ROUTE = '/chat/:userID';
 const App: React.FC = () => (
   <Router>
     <Switch>
-      <Route path={DASHBOARD_ROUTE}>
-        <Dashboard />
-      </Route>
-      <Route path={CHAT_ROUTE}>
-        <Chat />
-      </Route>
-      <Route path="/">
-        <Redirect to={DASHBOARD_ROUTE} />
-      </Route>
+      <Route path={DASHBOARD_ROUTE} component={Dashboard} />
+      <Route path={CHAT_ROUTE} component={Chat} />
+      <Redirect to={DASHBOARD_ROUTE} />
     </Switch>
   </Router>
 );
