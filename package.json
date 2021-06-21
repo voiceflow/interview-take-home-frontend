@@ -1,16 +1,17 @@
 {
-  "name": "composite-reducer",
+  "name": "chat",
   "version": "0.0.1",
-  "description": "combine reducers based on individual properties",
+  "description": "quick chat dialog with Voiceflow",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf build",
-    "build": "yarn clean && ttsc --project ./tsconfig.build.json --declaration"
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/composite-reducer.git"
+    "url": "git+https://github.com/voiceflow/chat-project.git"
   },
   "keywords": [
     "voiceflow",
@@ -20,7 +21,18 @@
     "reducer",
     "combinedReducer"
   ],
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
   "devDependencies": {
+    "@types/react": "^16.14.4",
+    "@types/react-dom": "^17.0.3",
     "@voiceflow/commitlint-config": "^1.1.0",
     "@voiceflow/eslint-config": "3.2.2",
     "@voiceflow/git-branch-check": "^1.2.0",
@@ -29,7 +41,7 @@
     "@voiceflow/stylelint-config": "^1.0.0",
     "@voiceflow/tsconfig": "^1.0.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
-    "eslint": "^6.7.2",
+    "eslint": "^7.11.0",
     "prettier": "^1.18.2",
     "ttypescript": "^1.5.10",
     "typescript": "^3.9.6"
@@ -38,7 +50,19 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/voiceflow/composite-reducer/issues"
+    "url": "https://github.com/voiceflow/chat-project/issues"
   },
-  "homepage": "https://github.com/voiceflow/composite-reducer#readme"
+  "homepage": "https://github.com/voiceflow/chat-project/#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

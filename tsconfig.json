@@ -2,16 +2,15 @@
   "compilerOptions": {
     "target": "es2017",
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "esnext",
     "declaration": false,
     "sourceMap": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "experimentalDecorators": true,
     "allowJs": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "jsx": "react",
-    /* Strictness Checks */
     "alwaysStrict": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
@@ -23,7 +22,6 @@
     "strictBindCallApply": true,
     "noFallthroughCasesInSwitch": true,
     "strictPropertyInitialization": true,
-    /* Debugging Options */
     "traceResolution": false,
     "listEmittedFiles": false,
     "listFiles": false,
@@ -35,19 +33,19 @@
     ],
     "outDir": "./build",
     "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-    "types": []
+    "types": [],
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
   },
   "compileOnSave": false,
   "include": [
     "src/**/*",
     "test/**/*",
     "config/**/*",
-    "typings/**/*.d.ts",
+    "typings/**/*.d.ts"
   ],
   "exclude": [
     "node_modules/**"
