@@ -1,7 +1,7 @@
 {
-  "name": "chat",
+  "name": "frontend-project",
   "version": "0.0.1",
-  "description": "quick chat dialog with Voiceflow",
+  "description": "Voiceflow frontend project",
   "main": "build/index.js",
   "scripts": {
     "clean": "rimraf build",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voiceflow/chat-project.git"
+    "url": "git+https://github.com/voiceflow/frontend-project.git"
   },
   "keywords": [
     "voiceflow",
@@ -25,8 +25,13 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/react-router-dom": "^5.1.7",
+    "@voiceflow/general-types": "^1.50.3",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
@@ -41,18 +46,19 @@
     "@voiceflow/stylelint-config": "^1.0.0",
     "@voiceflow/tsconfig": "^1.0.0",
     "@zerollup/ts-transform-paths": "^1.7.18",
-    "eslint": "^7.11.0",
-    "prettier": "^1.18.2",
-    "ttypescript": "^1.5.10",
-    "typescript": "^3.9.6"
+    "eslint": "^7.27.0",
+    "prettier": "^2.2.1",
+    "prettier-stylelint": "^0.4.2",
+    "ttypescript": "^1.5.12",
+    "typescript": "^4.1.3"
   },
   "prettier": "@voiceflow/prettier-config",
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/voiceflow/chat-project/issues"
+    "url": "https://github.com/voiceflow/frontend-project/issues"
   },
-  "homepage": "https://github.com/voiceflow/chat-project/#readme",
+  "homepage": "https://github.com/voiceflow/frontend-project/#readme",
   "browserslist": {
     "production": [
       ">0.2%",

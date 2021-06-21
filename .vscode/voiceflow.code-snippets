@@ -1,0 +1,116 @@
+{
+  "React Function Component": {
+    "scope": "javascript,javascriptreact",
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const $1 = ({ $2 }) =>",
+      "  (",
+      "    ${3:null}",
+      "  );",
+      "",
+      "export default $1;"
+    ],
+    "description": "Create a stateless react component"
+  },
+  "React Typescript Function Component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "export type $1Props = {",
+      "  $2",
+      "};",
+      "",
+      "const $1: React.FC<$1Props> = ({ $3 }) =>",
+      "  (",
+      "    ${4:null}",
+      "  );",
+      "",
+      "export default $1;"
+    ],
+    "description": "Create a stateless react component"
+  },
+  "React Class Component": {
+    "scope": "javascript,javascriptreact",
+    "prefix": "rcc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "class $1 extends React.PureComponent {",
+      "  state = {",
+      "    $2",
+      "  };",
+      "",
+      "  render() {",
+      "    ${3:const { $4 \\} = this.props;}",
+      "    ${5:const { $6 \\} = this.state;}",
+      "",
+      "    return (",
+      "      ${7:null}",
+      "    );",
+      "  }",
+      "}",
+      "",
+      "export default $1;"
+    ],
+    "description": "Create a stateful react component"
+  },
+  "React Styled Component": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rsc",
+    "body": [
+      "import { styled } from '@/hocs';",
+      "",
+      "const $1 = styled$2`",
+      "  $3",
+      "`;",
+      "",
+      "export default $1;"
+    ],
+    "description": "Create a styled react component"
+  },
+  "Redux State Connection": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "xsc",
+    "body": [
+      "import { connect } from '@/hocs';",
+      "",
+      "${1:const mapStateToProps = {",
+      "  $2",
+      "\\};}",
+      "",
+      "${3:const mapDispatchToProps = {",
+      "  $4",
+      "\\};}",
+      "",
+      "type Connected$5Props = ConnectedProps<${6:typeof mapStateToProps}, ${7:typeof mapDispatchToProps}>;",
+      "",
+      "export default connect(",
+      "  ${6:mapStateToProps},",
+      "  ${7:mapDispatchToProps},",
+      ")($5)"
+    ],
+    "description": "Create redux connection patterns"
+  },
+  "Connected Props": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "xp",
+    "body": [
+      "import { ConnectedProps } from '@/types';",
+      "",
+      "type Connected$1Props = ConnectedProps<typeof mapStateToProps, typeof mapDispatchToProps>;"
+    ],
+    "description": "Create redux connection patterns"
+  },
+  "React Component Index": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "rci",
+    "body": [
+      "export { default as $1 } from './$2$1';"
+    ],
+    "description": "Create a component index file"
+  }
+}
