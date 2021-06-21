@@ -13,6 +13,7 @@ const Chat: React.FC = () => (
     </dl>
 
     <input placeholder="user input here" />
+    <button>send</button>
   </div>
 );
 
