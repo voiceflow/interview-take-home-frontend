@@ -53,7 +53,7 @@ For example, if I select _Steve_ and chat for a bit, I can back out and select _
 
 Right now the dashboard and chat are hard coded - but this should be all be dynamic. Feel free to add in a bit of styling as well to make it look a little better. (We're really not judging design or how pretty it is, but it's a good opportunity to show off styling code).
 
-Feel free to modify the code as much as you want - the template is more of a suggestion.
+Feel free to modify the code as much as you want, as the template is more of a suggestion. **Use any libraries, packages, existing code - nothing is off limits.**
 
 # Requirements
 
