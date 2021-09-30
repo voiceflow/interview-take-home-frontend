@@ -34,7 +34,7 @@ Go on http://localhost:3000, you should see a window like this:
 
 # Overview ℹ️
 
-Login/sign up for [Voiceflow Creator](https://creator.voiceflow.com), and build a simple **Custom Assistant** project. If you need inspiration you can check out the [Templates](https://www.voiceflow.com/templates-draft). Test it out to make sure it's working!
+Login/sign up for [Voiceflow Creator](https://creator.voiceflow.com), and build a simple **Custom Assistant** project. If you need inspiration you can check out the [Templates](https://www.voiceflow.com/templates). Test it out to make sure it's working!
 
 On the **"Launch"** tab of your Voiceflow project, you'll be able to get the API keys as well as the version. Under `src/Chat/utils.ts` you'll find a utility function that shows how the API can be called. [Click here](https://www.voiceflow.com/api/dialog-manager) for more documentation on the Voiceflow API.
 
