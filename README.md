@@ -12,7 +12,7 @@ It’ll help you gain a much better understanding of how conversational interfac
 
 Make sure you have [Node.js](https://nodejs.org/) and [yarn](https://yarnpkg.com/) on your computer.
 
-Fork this repository.
+Clone this repository (keep your repo private).
 
 > to install all dependencies (node_modules) :
 
