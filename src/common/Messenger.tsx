@@ -1,17 +1,16 @@
-import { GeneralTrace } from '@voiceflow/general-types';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { interact } from 'src/Chat/utils';
 
 import Message, { TIME_BEFORE_CHAT_CLEARS_IN_SECONDS } from './Message';
 import TextInput from './TextInput';
-import { ChatType, getConvoLocalStorage, setConvoLocalStorage } from './utils';
+import { ChatLogType, ChatType, getConvoLocalStorage, setConvoLocalStorage, VoiceflowChatType } from './utils';
 
 const Messenger: React.FC<{
   userID: string;
   chatType: ChatType;
 }> = ({ userID, chatType }) => {
-  const [chatLog, setCompChatLog] = useState<GeneralTrace[]>(getConvoLocalStorage(userID, chatType));
-  const lastSpeakIndex = chatLog.length - 1 - [...chatLog].reverse().findIndex((chat: any) => chat?.type === 'speak');
+  const [chatLog, setCompChatLog] = useState<VoiceflowChatType[]>(getConvoLocalStorage(userID, chatType));
+  const lastSpeakIndex = chatLog.length - 1 - [...chatLog].reverse().findIndex((chat) => chat?.type === 'speak');
   const lastChatMessageDiv = useRef<HTMLDivElement>(null);
 
   const [focusLastChat, setFocusLastChat] = useState(false);
@@ -38,7 +37,7 @@ const Messenger: React.FC<{
   }, [focusLastChat]);
 
   const setChatLog = useCallback(
-    (chatLog: any) => {
+    (chatLog: ChatLogType) => {
       setCompChatLog(chatLog);
       setConvoLocalStorage(chatLog, userID, chatType);
       setFocusLastChat(true);
@@ -60,7 +59,7 @@ const Messenger: React.FC<{
     )
       .then((response) => {
         setLoading(false);
-        setChatLog([...chatLog, ...response] as any);
+        setChatLog([...chatLog, ...response]);
         return response;
       })
       .catch(() => {
@@ -85,7 +84,8 @@ const Messenger: React.FC<{
             payload: {
               message: 'Say something to start another convo',
             },
-          } as any,
+            from: 'app',
+          },
         ]);
         setChatFinished(false);
       }, TIME_BEFORE_CHAT_CLEARS_IN_SECONDS * 1000);
@@ -93,7 +93,7 @@ const Messenger: React.FC<{
   }, [chatFinished]);
 
   useEffect(() => {
-    if (chatLog.find((chat: any) => chat?.type === 'end')) {
+    if (chatLog.find((chat) => chat?.type === 'end')) {
       setChatFinished(true);
     }
   }, [chatLog]);
@@ -111,7 +111,7 @@ const Messenger: React.FC<{
                 fontFamily: 'Gloria Hallelujah, cursive',
               }}
             >
-              {chatLog.map((chat: any, index: number) => {
+              {chatLog.map((chat, index: number) => {
                 const isLastTalkMessage = lastSpeakIndex === index;
                 const isLastChatMessage = chatLog.length - 1 === index;
 

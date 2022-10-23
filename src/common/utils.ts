@@ -1,22 +1,25 @@
+import { GeneralTrace } from '@voiceflow/general-types';
 import { get, set } from 'local-storage';
 
 export type ChatType = 'chat' | 'talk';
+export type VoiceflowChatType = GeneralTrace | { type: 'text'; payload: { message: string }; from: string };
+export type ChatLogType = VoiceflowChatType[];
 
-const setChatLogLocalStorage = (chatLog: any, userID: string) => {
-  set<any>(`${userID}-chat`, chatLog);
+const setChatLogLocalStorage = (chatLog: ChatLogType, userID: string) => {
+  set<ChatLogType>(`${userID}-chat`, chatLog);
 };
 
 const getChatLogLocalStorage = (userID: string) => {
-  return get<any>(`${userID}-chat`) || [];
+  return get<ChatLogType>(`${userID}-chat`) || [];
 };
 
 //
 
-const setTalkLogLocalStorage = (chatLog: any, userID: string) => {
+const setTalkLogLocalStorage = (chatLog: ChatLogType, userID: string) => {
   // Note that the audio is too big for local storage
   // Thus, strip out the audio and keep convert to text so that
   // the UI works after refresh
-  const chatLogNoAudio = chatLog.map((chat: any) =>
+  const chatLogNoAudio = chatLog.map((chat) =>
     chat?.type === 'speak'
       ? {
           ...chat,
@@ -26,14 +29,14 @@ const setTalkLogLocalStorage = (chatLog: any, userID: string) => {
       : chat
   );
 
-  set<any>(`${userID}-talk`, chatLogNoAudio);
+  set<ChatLogType>(`${userID}-talk`, chatLogNoAudio as ChatLogType);
 };
 
 const getTalkLogLocalStorage = (userID: string) => {
-  return get<any>(`${userID}-talk`) || [];
+  return get<ChatLogType>(`${userID}-talk`) || [];
 };
 //
-export const getConvoLocalStorage = (userID: string, chatType: ChatType) => {
+export const getConvoLocalStorage = (userID: string, chatType: ChatType): ChatLogType => {
   if (chatType === 'chat') {
     return getChatLogLocalStorage(userID);
   }
@@ -41,7 +44,7 @@ export const getConvoLocalStorage = (userID: string, chatType: ChatType) => {
   return getTalkLogLocalStorage(userID);
 };
 
-export const setConvoLocalStorage = (chatLog: any, userID: string, chatType: ChatType) => {
+export const setConvoLocalStorage = (chatLog: ChatLogType, userID: string, chatType: ChatType): void => {
   if (chatType === 'chat') {
     return setChatLogLocalStorage(chatLog, userID);
   }

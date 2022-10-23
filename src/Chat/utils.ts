@@ -1,9 +1,15 @@
 import { GeneralTrace, RequestType, TextRequest } from '@voiceflow/general-types';
 import axios from 'axios';
 
-const versionID = process.env.REACT_APP_VERSION_ID;
-const chatAPIKey = process.env.REACT_APP_CHAT_API_KEY;
-const talkAPIKey = process.env.REACT_APP_TALK_API_KEY;
+const versionID = 'development';
+// eslint-disable-next-line no-secrets/no-secrets
+const chatAPIKey = 'VF.DM.6351b3632d7a3100077aaaef.Bd2laKI1emzEzKb4';
+// eslint-disable-next-line no-secrets/no-secrets
+const talkAPIKey = 'VF.DM.6353861fa8fe570006712dc2.czCAgbqTVcY0cKSM';
+// eslint-disable-next-line no-secrets/no-secrets
+// const versionID = process.env.REACT_APP_VERSION_ID;
+// const chatAPIKey = process.env.REACT_APP_CHAT_API_KEY;
+// const talkAPIKey = process.env.REACT_APP_TALK_API_KEY;
 
 type APIType = 'chat' | 'talk';
 

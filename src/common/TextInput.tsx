@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { interact } from 'src/Chat/utils';
 
-import { ChatType } from './utils';
+import { ChatLogType, ChatType } from './utils';
 
 const TextInput: React.FC<{
   setLoading: (loading: boolean) => void;
-  setChatLog: (chat: any) => void;
-  chatLog: any;
+  setChatLog: (chatLog: ChatLogType) => void;
+  chatLog: ChatLogType;
   userID: string;
   chatType: ChatType;
   disabled: boolean;
@@ -32,7 +32,7 @@ const TextInput: React.FC<{
                 from: 'user',
               },
               ...response2,
-            ] as any);
+            ]);
 
             if (textInput.current?.value) {
               textInput.current.value = '';
