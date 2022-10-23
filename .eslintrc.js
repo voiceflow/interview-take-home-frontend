@@ -7,4 +7,7 @@ module.exports = {
       extends: ['@voiceflow/eslint-config/typescript'],
     },
   ],
+  rules: {
+    'no-console': 'off',
+  },
 };
